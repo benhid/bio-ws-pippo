@@ -1,4 +1,4 @@
-## Path-Seq (REST) Web Service
+## BioSignaling (REST) Web Service
 
 We are going to use [Pippo](http://www.pippo.ro/doc/server.html) to develop our web service (by routes approach):
 
