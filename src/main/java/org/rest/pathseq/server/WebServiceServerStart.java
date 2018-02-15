@@ -1,4 +1,4 @@
-package org.rest.pathway.server;
+package org.rest.pathseq.server;
 
 import ro.pippo.core.Pippo;
 

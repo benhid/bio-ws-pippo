@@ -7,7 +7,7 @@
     <artifactId>pathwss</artifactId>
     <version>1.0.0</version>
     <packaging>${packaging.type}</packaging>
-    <name>Pathway Web Service</name>
+    <name>PathSeq Web Service</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -16,7 +16,7 @@
         <pippo.version>1.7.0</pippo.version>
         <jetty.version>9.3.8.v20160314</jetty.version>
         <!-- Pippo Deployment -->
-        <main.class>org.rest.pathway.server.WebServiceServerStart</main.class>
+        <main.class>org.rest.pathseq.server.WebServiceServerStart</main.class>
     </properties>
 
     <build>

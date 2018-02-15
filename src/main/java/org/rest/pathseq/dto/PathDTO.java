@@ -1,4 +1,4 @@
-package org.rest.pathway.dto;
+package org.rest.pathseq.dto;
 
 public class PathDTO {
 

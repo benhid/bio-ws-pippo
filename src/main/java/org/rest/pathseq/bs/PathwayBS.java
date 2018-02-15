@@ -1,6 +1,6 @@
-package org.rest.pathway.bs;
+package org.rest.pathseq.bs;
 
-import org.rest.pathway.dto.PathDTO;
+import org.rest.pathseq.dto.PathDTO;
 
 import java.util.ArrayList;
 import java.util.List;
