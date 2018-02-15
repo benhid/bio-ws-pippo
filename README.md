@@ -6,8 +6,8 @@ We are going to use [Pippo](http://www.pippo.ro/doc/server.html) to develop our 
 
 ## Usage
 
-Clone the repository and run `src/main/java/org/rest/pathseq/server/WebServiceServerStart` or, alternatively, [deploy the server](http://www.pippo.ro/doc/deployment.html) using `mvn clean package`.
-This will generate a ._zip_ file in `target/`. Run `java -jar pathwss-#.#.#.jar` on the unzipped file.
+Clone the repository and run `src/main/java/org/rest/signal/server/WebServiceServerStart` or, alternatively, [deploy the server](http://www.pippo.ro/doc/deployment.html) using `mvn clean package`.
+This will generate a ._zip_ file in `target/`. Run `java -jar signalwss-#.#.#.jar` on the unzipped file.
 
 Then, go to
 ```
@@ -16,22 +16,38 @@ localhost:8338
 
 ## Methods
 
-It's possible to enumerate all the available pathways/sequences on the server by going to
+It's possible to [enumerate all the available pathways](images/debug_pathway_all.PNG) on the server by going to
 
 ```
 localhost:8338/debug/pathway/all
-localhost:8338/debug/sequence/all
 ```
 
-To get a specific pathway or sequence, use
+To [get a specific pathway](images/pathway_get.PNG), use
 
 ```
 localhost:8338/pathway/get/{name}
-localhost:8338/sequence/get/{name}
 ```
 
 e.g.
 
 ```
-localhost:8338/pathway/get/glycolysis
+localhost:8338/pathway/get/p53
+```
+
+To [get all pathways from a specific organism](images/filter_organism.PNG), use
+
+```
+localhost:8338/pathway/filter/organism/human
+```
+
+To [view a map of the pathway](images/pathway_map.PNG), use
+
+```
+localhost:8338/pathway/map/{name}
+```
+
+e.g.
+
+```
+localhost:8338/pathway/map/p53
 ```

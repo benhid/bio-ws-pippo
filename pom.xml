@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
     <!-- Module Information -->
-    <groupId>org.rest.pathway</groupId>
-    <artifactId>pathwss</artifactId>
+    <groupId>org.rest.signal</groupId>
+    <artifactId>signalwss</artifactId>
     <version>1.0.0</version>
     <packaging>${packaging.type}</packaging>
-    <name>PathSeq Web Service</name>
+    <name>BioSignal Web Service</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -16,7 +16,7 @@
         <pippo.version>1.7.0</pippo.version>
         <jetty.version>9.3.8.v20160314</jetty.version>
         <!-- Pippo Deployment -->
-        <main.class>org.rest.pathseq.server.WebServiceServerStart</main.class>
+        <main.class>org.rest.signal.server.WebServiceServerStart</main.class>
     </properties>
 
     <build>

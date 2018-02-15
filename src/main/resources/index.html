@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-        <title>Hello World</title>
+        <title>BioSignaling</title>
 
         <!-- Style -->
         <style type="text/css">
@@ -107,12 +107,45 @@
 
         <div class="container">
             <div class="card">
-                <h1>Web service</h1>
-                <p>
-                    Example
-                </p>
+                <h1>Biological Signaling Pathway</h1>
+                <div id="mapPath">
+                </div>
             </div>
         </div>
+
+        <script>
+            var getUrlParameter = function getUrlParameter(sParam) {
+                var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                    sURLVariables = sPageURL.split('&'),
+                    sParameterName,
+                    i;
+
+                for (i = 0; i < sURLVariables.length; i++) {
+                    sParameterName = sURLVariables[i].split('=');
+
+                    if (sParameterName[0] === sParam) {
+                        return sParameterName[1] === undefined ? true : sParameterName[1];
+                    }
+                }
+            };
+
+            window.onload = function() {
+                var name = getUrlParameter('map');
+                var route = '/static/map/';
+                route = route.concat(name, '.png')
+
+                console.log(route);
+
+                var img = new Image();
+                var div = document.getElementById('mapPath');
+
+                img.onload = function() {
+                  div.appendChild(img);
+                };
+
+                img.src = route;
+            };
+        </script>
 
     </body>
 
