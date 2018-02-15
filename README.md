@@ -28,17 +28,23 @@ To [get a specific pathway](images/pathway_get.PNG), use
 localhost:8338/pathway/get/{name}
 ```
 
-e.g.
+    e.g.
 
-```
-localhost:8338/pathway/get/p53
-```
+    ```
+    localhost:8338/pathway/get/p53
+    ```
 
 To [get all pathways from a specific organism](images/filter_organism.PNG), use
 
 ```
-localhost:8338/pathway/filter/organism/human
+localhost:8338/pathway/filter/organism/{organism}
 ```
+
+    e.g.
+
+    ```
+    localhost:8338/pathway/filter/organism/human
+    ```
 
 To [view a map of the pathway](images/pathway_map.PNG), use
 
@@ -46,8 +52,8 @@ To [view a map of the pathway](images/pathway_map.PNG), use
 localhost:8338/pathway/map/{name}
 ```
 
-e.g.
+    e.g.
 
-```
-localhost:8338/pathway/map/p53
-```
+    ```
+    localhost:8338/pathway/map/p53
+    ```

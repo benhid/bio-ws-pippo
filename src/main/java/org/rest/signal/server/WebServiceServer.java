@@ -43,7 +43,7 @@ public class WebServiceServer extends Application {
             routeContext.json().send(path);
         });
 
-        // Get a specific pathway
+        // Get a map from a specific pathway
         GET("/pathway/map/{name}", routeContext -> {
             SignalBS pathwayBS = routeContext.getLocal("signalBS");
             String name = routeContext.getParameter("name").toString();
@@ -56,7 +56,7 @@ public class WebServiceServer extends Application {
             }
         });
 
-        // Get a specific pathway
+        // Filter all pathways by organism
         GET("/pathway/filter/organism/{org}", routeContext -> {
             SignalBS pathwayBS = routeContext.getLocal("signalBS");
             String organism = routeContext.getParameter("org").toString();
