@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  wildfly:
+    build:
+        context: ./wildfly
+    image: jboss/wildfly
+    container_name: wildfly_ws
+    ports:
+      - 8080:8080
+      - 8090:9990

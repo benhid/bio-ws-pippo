@@ -1,37 +1,53 @@
-## Path-Seq (REST) Web Service
+# JAX-WS Web Service
 
-We are going to use [Pippo](http://www.pippo.ro/doc/server.html) to develop our web service (by routes approach):
+## Requisitos
 
-> Most server-side Java applications (e.g. web or service-oriented) are intended to run within a container. The traditional way to package these apps for distribution is to bundle them as a WAR file. Of course you can use the above model for your application development or you can use the simple way. Rather than your application being deployed to a container, an embedded container is deployed within the application itself. Pippo comes with Jetty as embedded web server. You can choose another container if you want (for example Tomcat).
+Para poder ejecutar el servidor es necesario disponer de:
 
-## Usage
-
-Clone the repository and run `src/main/java/org/rest/pathseq/server/WebServiceServerStart` or, alternatively, [deploy the server](http://www.pippo.ro/doc/deployment.html) using `mvn clean package`.
-This will generate a ._zip_ file in `target/`. Run `java -jar pathwss-#.#.#.jar` on the unzipped file.
-
-Then, go to
-```
-localhost:8338
-```
-
-## Methods
-
-It's possible to enumerate all the available pathways/sequences on the server by going to
+* Java 8 JDK,
+* Maven >3.5,
+* [Docker](https://get.docker.com/)/[Docker-compose](https://docs.docker.com/compose/install/#install-compose) para el despliegue en Wildfly (opcional),
+* [Postman](https://www.getpostman.com/) para probar la API (opcional).
+ 
+## Compilación
+ 
+En la carpeta _rest-ws_ o _soap-ws_, ejecutar
 
 ```
-localhost:8338/debug/pathway/all
-localhost:8338/debug/sequence/all
+$ mvn clean install
 ```
 
-To get a specific pathway or sequence, use
+Esto generará el archivo **_helloworld-ws.war_** en _~/target/_.
+
+## Despliegue
+
+Iniciaremos el contenedor de Docker posicionándonos en la carpeta _docker-wildfly_ usando
+
+```bash
+$ docker-compose build
+$ docker-compose up -d
+```
+
+Esto descargará (si es necesario) e iniciará la imagen de Wildfly usando Docker. A través de la dirección
 
 ```
-localhost:8338/pathway/get/{name}
-localhost:8338/sequence/get/{name}
+http://localhost:8090/
 ```
 
-e.g.
+podremos acceder al panel de control usando el nombre y contraseña especificados en el archivo _~/docker-wildfly/wildfly/Dockerfile_ (por defecto, admin:12345).
+
+En la pestaña superior _Deployments_ podemos añadir nuestro archivo _.war_ (pinchando en el botón azul _Add_).
+
+![wildly](https://raw.githubusercontent.com/benhid/soap-ws/master/resources/wildfly-deploy.png)
+
+Si todo va bien, podremos acceder a nuestro endpoint a través de la dirección
 
 ```
-localhost:8338/pathway/get/glycolysis
+http://localhost:8080/helloworld-ws/server?wsdl
+```
+
+O, si hemos desplegado un servidor *rest*,
+
+```
+http://localhost:8080/helloworld-ws/server/school/
 ```
